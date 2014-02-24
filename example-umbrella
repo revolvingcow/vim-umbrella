@@ -1,0 +1,2 @@
+coverage run python_test.py &> /dev/null
+python umbrella.py &> /dev/null
