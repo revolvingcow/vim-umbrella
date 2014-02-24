@@ -78,7 +78,6 @@ function! s:ShowCoverage()
         return
     endif
 
-
     if exists('g:umbrella_root') && exists('g:umbrella_coverage')
         exec "cd! " . g:umbrella_root
         for line in readfile(g:umbrella_coverage)
@@ -104,7 +103,7 @@ endfunction
 
 " Commands
 command Umbrella
-    \ call s:RunCoverage()
+    \ call s:RunCoverage() <bar> 
     \ call s:ShowCoverage()
 command UmbrellaRefresh
     \ call s:ShowCoverage()
