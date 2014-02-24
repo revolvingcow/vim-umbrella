@@ -12,9 +12,9 @@ highlight UmbrellaPartial ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 highlight UmbrellaNone ctermfg=15 ctermbg=1 guifg=White guibg=Red
 
 " Declare signs.
-sign define UmbrellaCovered text==] texthl=UmbrellaCovered
-sign define UmbrellaPartial text==| texthl=UmbrellaPartial
-sign define UmbrellaNone text==[ texthl=UmbrellaNone
+sign define UmbrellaCovered text=°° texthl=UmbrellaCovered
+sign define UmbrellaPartial text=÷÷ texthl=UmbrellaPartial
+sign define UmbrellaNone text=×× texthl=UmbrellaNone
 
 function! s:Initialize()
     let s:coverage_systems = {
@@ -85,15 +85,21 @@ function! s:ShowCoverage()
 
             if bufexists(l:parts[0])
                 if len(l:parts[1])
-                    exe ":sign place 1 line=" . l:parts[1] . " name=UmbrellaCovered file=" . l:parts[0]
+                    for n in split(l:parts[1], ",")
+                        exe ":sign place 1 line=" . l:n . " name=UmbrellaCovered file=" . l:parts[0]
+                    endfor
                 endif
 
                 if len(l:parts[2])
-                    exe ":sign place 1 line=" . l:parts[2] . " name=UmbrellaPartial file=" . l:parts[0]
+                    for n in split(l:parts[2], ",")
+                        exe ":sign place 1 line=" . l:n . " name=UmbrellaPartial file=" . l:parts[0]
+                    endfor
                 endif
 
                 if len(l:parts[3])
-                    exe ":sign place 1 line=" . l:parts[3] . " name=UmbrellaNone file=" . l:parts[0]
+                    for n in split(l:parts[3], ",")
+                        exe ":sign place 1 line=" . l:n . " name=UmbrellaNone file=" . l:parts[0]
+                    endfor
                 endif
             endif
         endfor
