@@ -1,0 +1,1 @@
+python umbrella.py &> /dev/null

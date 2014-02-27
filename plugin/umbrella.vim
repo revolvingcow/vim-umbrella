@@ -78,7 +78,7 @@ function! s:ShowCoverage()
         return
     endif
 
-    if exists('g:umbrella_root') && exists('g:umbrella_coverage')
+    if exists('g:umbrella_root') && exists('g:umbrella_coverage') && filereadable(g:umbrella_coverage)
         exec "cd! " . g:umbrella_root
         for line in readfile(g:umbrella_coverage)
             let parts = split(l:line, ";")
