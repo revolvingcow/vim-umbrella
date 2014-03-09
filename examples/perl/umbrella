@@ -1,0 +1,2 @@
+make testcover &> /dev/null
+./umbrella.pl &> /dev/null
