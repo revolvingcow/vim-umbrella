@@ -12,9 +12,9 @@ highlight UmbrellaPartial ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
 highlight UmbrellaNone ctermfg=15 ctermbg=1 guifg=White guibg=Red
 
 " Declare signs.
-sign define UmbrellaCovered text=°° texthl=UmbrellaCovered
-sign define UmbrellaPartial text=÷÷ texthl=UmbrellaPartial
-sign define UmbrellaNone text=×× texthl=UmbrellaNone
+sign define UmbrellaCovered text=== texthl=UmbrellaCovered
+sign define UmbrellaPartial text=-- texthl=UmbrellaPartial
+sign define UmbrellaNone text=__ texthl=UmbrellaNone
 
 function! s:Initialize()
     let s:coverage_systems = {
